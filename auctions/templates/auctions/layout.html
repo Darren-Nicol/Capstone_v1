@@ -1,0 +1,193 @@
+{% load static %}   
+
+{% url 'auctions:index' as  home %}
+{% url 'auctions:categories' category='Genesis' as  COLLECTION1 %}
+{% url 'auctions:categories' category='Ghetto Kings' as  COLLECTION2 %}
+{% url 'auctions:categories' category='Township Princess' as  COLLECTION3 %}
+{% url 'auctions:about_us' as about_us %}
+{% url 'auctions:merch' as merch %}
+{% url 'auctions:footprint' as footprint %}
+
+<!-- Sort URLS 
+ZNMFDQT - Genesis
+IQNFYQY - Ghetto Kings
+ZQDUZLPA - Township Princess
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>{% block title %}inkeDama - Orphan Art for Impact{% endblock %}</title>
+    <link rel="icon" href="{{files_path}}/img/inkedama-logo-small.png" type = "image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/7faee5c6e1.js" crossorigin="anonymous"></script>
+    <link href="{{files_path}}/css/styles.css" rel="stylesheet">
+    <link href="{{files_path}}/css/sidebar.css" rel="stylesheet">
+    <script defer src="{{files_path}}/js/sidebar.js"></script>
+    <script>
+        function copyOpenSeaAc() {
+        /* Get the text field */
+        var copyText = document.getElementById("myInput");
+
+        /* Select the text field */
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+        /* Copy the text inside the text field */
+        navigator.clipboard.writeText(copyText.value);
+  
+        /* Alert the copied text */
+        //alert("Kuhle (Xhosa for awesome!) you have copied the Inkedama account number: paste it into the Open Sea search bar to find us");
+
+    }
+    </script>
+</head>
+
+<body>
+    <body id="body-pd">
+        <!-- Sidebar by  BBBootstrap Team -->
+        <header style="height:75px;" class="header" id="header">
+            <div style="color:white;" class="header_toggle">
+                <i class='fas fa-chevron-right' id="header-toggle"></i>
+            </div>
+            
+            <div>
+                <a href="{{ home }}"><img style="height:60px;position:absolute;left:48.5%;top:5px;" src="{{files_path}}/img/inkedama-logo-concept.png"></img></a>
+            </div>
+            <div class="nav-buttons">
+                {% if user.is_authenticated %}
+                        <div class="row row-cols-auto">
+                            <a class="btn btn-primary btn-new-black" style="margin-left:6px;" href="{% url 'auctions:user_panel' %}">Dashboard</a>
+                            
+                            <!-- only superusers can create NFTs -->
+                            {% if user.is_superuser %}
+                                <a class="btn btn-primary btn-new-black" style="margin-left:6px;" href="{% url 'auctions:create_listing' %}">Create NFT</a>
+                            {% endif %}
+                        
+                            <!-- function works, despite VS Code's insistence that it's a syntax error -->
+                            <a class="btn btn-primary btn-new-black" style="margin-left:6px;" onclick='return confirm("Are you sure, you want to log out?")' href="{% url 'auctions:logout' %}">
+                                <i class='fas fa-sign-out-alt'></i>
+                            </a>
+                        </div>
+                        <strong class="row row-cols-auto" style="color:white;float:right;">
+                            Signed in as: {{ user.username }}
+                        </strong>
+                {% else %}
+                    <div class="row row-cols-auto">
+                        <a class="btn btn-primary btn-new-black" style="margin-left:6px;" href="{% url 'auctions:login' %}">Log In</a>
+                        <a class="btn btn-primary btn-new-black" style="margin-left:6px;" href="{% url 'auctions:register' %}">Register</a>
+                    </div>
+                {% endif %}
+            </div>
+        </header>
+
+        
+
+
+        <div class="l-navbar" id="nav-bar">
+            <nav class="nav">
+                <div>
+                    <div class="nav_list">
+                        <a href="{{ home }}" class="nav_link {% if request.path == home %} active {% endif %}">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <polyline points="5 12 3 12 12 3 21 12 19 12"></polyline>
+                                <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7"></path>
+                                <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6"></path>
+                             </svg>
+                             <span class="nav_name">Home Page</span> 
+                        </a>
+                        
+                        <a href="{{ COLLECTION1 }}" class="nav_link {% if request.path == COLLECTION1 %} active {% endif %}">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-palette" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M12 21a9 9 0 1 1 0 -18a9 8 0 0 1 9 8a4.5 4 0 0 1 -4.5 4h-2.5a2 2 0 0 0 -1 3.75a1.3 1.3 0 0 1 -1 2.25"></path>
+                                <circle cx="7.5" cy="10.5" r=".5" fill="currentColor"></circle>
+                                <circle cx="12" cy="7.5" r=".5" fill="currentColor"></circle>
+                                <circle cx="16.5" cy="10.5" r=".5" fill="currentColor"></circle>
+                             </svg>
+                             <span class="nav_name">NFT Collections</span>
+                        </a>
+
+                        <a href="{{ merch }}" class="nav_link {% if request.path == merch %} active {% endif %}">
+                            <div class="icon icon-tabler icon-tabler-briefcase">
+                                <i class='fas fa-tshirt'></i>
+                            </div>
+                            <span class="nav_name">Merch</span>
+                        </a>
+
+                        <a href="{{ footprint }}" class="nav_link {% if request.path == footprint %} active {% endif %}">
+                            <div class="icon icon-tabler icon-tabler-briefcase">
+                                <i class="fas fa-shoe-prints"></i>  
+                            </div>
+                            <span class="nav_name">Footprint</span>
+                        </a>      
+
+                        <a href="{{ about_us }}" class="nav_link {% if request.path == about_us %} active {% endif %}">
+                            <div class="icon icon-tabler icon-tabler-briefcase">
+                                <i class="fas fa-question"></i>
+                            </div>
+                        <span class="nav_name">About the B Corp Collab</span>
+                        </a>
+
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <div style="min-height:400px;" class="height-auto bg-light">
+            {% block body %}
+
+            {% endblock %}
+        </div>
+
+        <div class="container-footer w-container">
+            <div class="w-row">
+                <div class="footer-column w-clearfix w-col w-col-4">
+                    <h3 class="footer-failory-name">Inkedama</h3>
+                    <p class="footer-description-failory">Inkedama is a collaboration trading name of<a href="https://www.nudgeexchange.com/#/" target="_blank"><span class="footer-link"> Nudge<br></a>Registered Limited Company: SC460309</p>
+                    <p class="footer-description-failory">and<a href="https://www.facebook.com/siyakhathalawecare" target="_blank"><span class="footer-link"> Siyakhathala Orphans NPO 068-260<br></span></a><br></p>
+                </div>
+                
+                <div class="footer-column w-col w-col-8">
+                <div class="w-row">
+                    <div class="w-col w-col-8">
+                    <div class="w-row">
+                        <div class="w-col w-col-7 w-col-small-6 w-col-tiny-7">
+                        <h3 class="footer-titles">Learn</h3>
+                        <p class="footer-links">
+                            <a href="https://metamask.io/faqs" target="_blank"><span class="footer-link">Metamask<br></span></a>
+                            <a href=""><span class="footer-link"></span></a>
+                            <a href="https://support.opensea.io/hc/en-us" target="_blank"><span class="footer-link">Open Sea<br></span></a>
+                            <a href="https://rarible.com/how-it-works" target="_blank"><span class="footer-link">Rarible</span></a><strong><br></strong></p>
+                        </div>
+
+                        <div class="w-col w-col-5 w-col-small-6 w-col-tiny-5">
+                        <h3 class="footer-titles">Other</h3>
+                        <p class="footer-links">
+                            <a href="{% url 'auctions:partners' %}"><span class="footer-link">Our Partners<br></span></a>
+                            <a href="{% url 'auctions:purpose' %}"><span class="footer-link">Inkedama Purpose<br></span></a>
+                            <a href="{% url 'auctions:footprint' %}"><span class="footer-link">Footprint</span></a>
+                        </p>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="column-center-mobile w-col w-col-4">
+                    <!-- <h3 class="footer-titles">Follow us for our next drops!</h3><a href="" target="_blank" class="footer-social-network-icons w-inline-block"><img src="https://uploads-ssl.webflow.com/5966ea9a9217ca534caf139f/5c8dbf0a2f2b67e3b3ba079c_Twitter%20Icon.svg" width="20" alt="Twitter icon"></a><a href="" target="_blank" class="footer-social-network-icons w-inline-block"><img src="https://uploads-ssl.webflow.com/5966ea9a9217ca534caf139f/5c8dbfe70fcf5a0514c5b1da_Instagram%20Icon.svg" width="20" alt="Instagram icon"></a><a href="" target="_blank" class="footer-social-network-icons w-inline-block"><img src="https://uploads-ssl.webflow.com/5966ea9a9217ca534caf139f/5c8dbe42e1e6034fdaba46f6_Facebook%20Icon.svg" width="20" alt="Facebook Icon"></a><a href="" target="_blank" class="footer-social-network-icons w-inline-block"><img src="https://uploads-ssl.webflow.com/5966ea9a9217ca534caf139f/5c8dc0002f2b676eb4ba0869_LinkedIn%20Icon.svg" width="20" alt="LinkedIn Icon"></a><a href="" target="_blank" class="footer-social-network-icons w-inline-block"><img src="https://uploads-ssl.webflow.com/5966ea9a9217ca534caf139f/5c8dc0112f2b6739c9ba0871_Pinterest%20Icon.svg" width="20" alt="Pinterest Icon" class=""></a> -->
+                    <h3 class="footer-titles">Email us at: </h3>
+                    <p class="footer-description"><a href=mailto:darren@nudgeexchange.com? target="_blank"><strong class="link-email-footer">darren@nudgeexchange.com</strong></a><br></p>
+                    <p class="footer-links">Made with <img src="{{files_path}}/img/heart.svg" width="20" alt="Heart icon"> by <a href="https://www.nudgeexchange.com/#/" target="_blank"><span class="footer-link"> Nudge<br></span></a></p>
+                    <img src="{{files_path}}/img/B-Corp-Logo-White.jpg" width="80" alt="B Corp">
+
+                </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>

@@ -1,0 +1,163 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+
+    <table class="container">
+        <tr>
+            <td style="padding:24px;width:40%;">
+                <p style="width:60%;margin:auto;">
+                    <strong style="font-size:42px;">
+                        Inkedama
+                    </strong>
+                    <br/>
+                    <i style="font-size:24px;">
+                        "Orphan" in Xhosa
+                    </i>
+                    <br/>
+                    <i>IPA: [íᵑkéd̥a̤᷈:ma]</i>
+                </p>
+            </td>
+            <td style="padding:24px;width:60%;font-size:24px">
+                <p>We have worked in Collaboration with the Siyakhathala Orphans Charity from the South African townships to create unique one of one NFTs and Merchandise.</p>
+                <p>Every sale goes to the shelter, education and support of the under-privileged.</p>
+            </td>
+        </tr>
+        <!-- <p>Register to access the art and follow us on social to keep up to date on latest drops!</p> -->
+        <br>
+    </table>
+
+    <div>
+        <div style="max-width:80%;margin:auto;text-align:center;align-content:center;">
+            <img style="width:inherit;" src="{{files_path}}/img/guide3.svg" alt="5 step guide">
+        </div>
+    </div>
+    <br/>
+
+    <div class="card mb-3 pb-5">
+        <div class="container">
+            <div class="sub-title">The Collaborators:</div>
+        </div>
+
+        <div class="container">
+            <div class="row row-cols-3">
+                <div class="column">
+                    <div class="card auction-item mb-4 shadow" style="width:80%;margin:auto;">
+                        <div class="card-image-wrapper">
+                            <img src="{{files_path}}/img/placeholder.png" alt="Artist" style="width:75%;border-radius:50%;">
+                        </div>
+                        <div class="container";>
+                            <h2>Mbhali Faku</h2>
+                            <p>Collections:</p>
+                            <p>Genesis</p>
+                            <p>About me:</p>
+                            <p>I dream of being a footballer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="card auction-item mb-4 shadow" style="width:80%;margin:auto;">
+                        <div class="card-image-wrapper">
+                            <img src="{{files_path}}/img/placeholder.png" alt="Artist" style="width:75%;border-radius:50%;">
+                        </div>
+                        <div class="container">
+                            <h2>Yonela Tomose</h2>
+                            <p>Collections:</p>
+                            <p>Genesis</p>
+                            <p>About me:</p>
+                            <p>I dream of owning a business</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="card auction-item mb-4 shadow" style="width:80%;margin:auto;">
+                        <div class="card-image-wrapper">
+                            <img src="{{files_path}}/img/placeholder.png" alt="Artist" style="width:75%;border-radius:50%;">
+                        </div>
+                        <div class="container">
+                            <h2>Nolu Makeba</h2>
+                            <p>Collections:</p>
+                            <p>Genesis</p>
+                            <p>About me:</p>
+                            <p>I dream of being an artist</p>  
+                        </div>
+                    </div>
+                    <div class="outer">
+                        <div class="inner-button-container">
+                            <a href="{{COLLECTION1}}" class="btn btn-new-purple" style="color:white;">Check out our NFTs</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card mb-3 pb-5">
+        <div class="container">
+            <div class="sub-title">The Team:</div>
+        </div>
+
+        <div class="container">
+            <div class="row row-cols-3">
+                <!--<div class="column">
+                    <div class="card auction-item mb-4 shadow" style="width:90%;margin:auto;">
+                        <div class="card-image-wrapper">
+                            <img src="{{files_path}}/img/004-swagger.svg" alt="Hipster" style="width: 40%">
+                        </div>
+                        <div class="container">
+                            <h2>Hipster</h2>
+                            <p class="title">Co-Founder</p>
+                            <p>Responsible for:</p>
+                            <p>Making beautiful connections.</p>
+                            <p>example@example.com</p>
+                        </div>
+                    </div>
+                </div>-->
+                <div class="column">
+                    <div class="card auction-item mb-4 shadow" style="width:90%;margin:auto;">
+                        <div class="card-image-wrapper">
+                            <img src="{{files_path}}/img/Darren.svg" alt="Tech Guy" style="width: 70%;">
+                        </div>
+                        <div class="container_team">
+                            <h2>The Fundraiser</h2>
+                            <p>Responsible for:</p>
+                            <p>Getting stuff done</p>
+                            <p>darren@nudgeexchange.com</p>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="column">
+                    <div class="card auction-item mb-4 shadow" style="width:90%;margin:auto;">
+                        <div class="card-image-wrapper">
+                            <img src="{{files_path}}/img/Nontsasa.png" alt="Hacker" style="width: 95%">
+                        </div>
+                        <div class="container_team">
+                            <h2>Nontsasa</h2>
+                            <p>Responsible for:</p>
+                            <p>Building awesome things that make a difference</p>
+                            <p>siyakhathalaorphans@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="column">
+                    <div class="card auction-item mb-4 shadow" style="width:90%;margin:auto;">
+                        <div class="card-image-wrapper">
+                            <img src="{{files_path}}/img/Sam.svg" alt="Dug" style="width: 70%">
+                        </div>
+                        <div class="container_team">
+                            <h2>The Wizard</h2>
+                            <p>Responsible for:</p>
+                            <p>Coding, Debugging and General Wizardry</p>
+                            <p>sam.clough@nudgeexchange.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div>
+    <!-- FOOTER -->
+
+
+
+{% endblock %}
+

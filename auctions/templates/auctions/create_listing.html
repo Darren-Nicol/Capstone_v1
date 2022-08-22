@@ -1,0 +1,43 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+
+<div class="container">
+    <div class="sub-title">Create NFT</div>
+
+    <form action="{% url 'auctions:create_listing' %}", method="POST">
+        {% csrf_token %}
+        <div class="form-group mb-3">
+            <label for="id_title">{{ form.title.label }}:</label>
+            {{ form.title }}
+        </div>
+        <div class="form-group mb-3">
+            <label for="id_description">{{ form.description.label }}:</label>
+            {{ form.description }}
+        </div>
+        <div class="form-group mb-3">
+            <label for="id_category">{{ form.category.label }}:</label>
+            {{ form.category }}
+        </div>
+        <div class="form-group mb-3">
+            <label for="id_image_url">{{ form.image_url.label }}:</label> <!-- need to add in location of NFT, S3 bucket? -->
+            {{ form.image_url }}
+        </div>
+        
+        <div class="form-group mb-3">
+            <label for="id_close_date">{{ form.close_date.label }}:</label>
+            {{ form.close_date }}
+        </div>
+
+        <!--The above form field has been added, how do I ensure its added to database? Views and then ensure added to admin/ models-->
+        <div class="form-group mb-3">
+            <label for="id_value">{{ form.current_price.label }}:</label>
+            {{ form.current_price }}
+        </div>
+        <!--Needs more work to add to form only showing : -->
+        <button type="submit" class="btn btn-primary btn-new-purple" aria-label="submit">Submit</button>
+        
+    </form>
+    <br/>
+</div>
+{% endblock %}

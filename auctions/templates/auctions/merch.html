@@ -1,0 +1,41 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+
+    <!-- ADD THE MERCH -->
+
+    <div class="container">
+        <div class="sub-title">The Merch:</div>
+        <!--<p><center>All Tees are made to order with all profits going to the Siyakhathala Orphans!</center></p>
+        <p><center>In the order, state size and NFT design desired.</center></p>-->
+    </div>
+
+    <div class="row row-cols-2" style="width:100%;margin:auto;">
+        <div class="container">
+            <div class="card auction-item mb-4 shadow" style="width:100%;margin:auto;">
+                <div class="row row-cols-1">
+                    <div class="column" style="width:40%;">
+                        <div class="merch-card-image-wrapper" style="height:100%;background-color:white;margin:auto;">
+                            <img src="{{files_path}}/img/merch_final.png" alt="t" style="width:225px;height:225px;">
+                        </div>
+                    </div>
+                    <div class="column" style="width:45%;">
+                        <div class="card-body">
+                            <h5 class="card-title">inkeDamaTee</h5>
+                            <div>
+                                <p class="title">Genesis Range</p>
+                                <p>Size: S/M/L/XL</p>
+                                <p>Any color as longs it's black</p>
+                                <p>Free with initial NFT purchase or available on request</p>
+                            </div>
+                            <a class="btn btn-new-purple" style="color:white;margin:auto;width:90%;" href=mailto:darren@nudgeexchange.com? target="_blank">Email Us</a> <!-- Send Email -->
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <br/>
+
+{% endblock %}

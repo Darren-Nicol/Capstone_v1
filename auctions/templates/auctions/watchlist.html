@@ -1,0 +1,10 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+
+<div class="card mb-3 pb-5">
+    {% include "auctions/partials/listings_group.html" with auctions=selling sub_title="The Merch" %}
+    <!-- Need to add artists -->
+</div>
+
+{% endblock %}

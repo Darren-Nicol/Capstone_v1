@@ -1,0 +1,28 @@
+
+<div class="card auction-item mb-4 shadow">
+        {% if auction.image_url %}
+            <div class="card-image-wrapper">
+                <img class="card-img-top listing-img" src="{{ auction.image_url }}" alt="{{ auction.title }} photo">
+            </div>
+        {% endif %}
+        <div class="column">
+            <div class="card-body">
+                <a href="{% url 'auctions:listing_page' auction_id=auction.id %}">
+                    <h5 class="card-title">{{auction.title}}</h5>
+                </a> 
+                <div>
+                    <p class="title">Collection: {{auction.get_category_display}}</p>
+                    <h5>{{auction.current_price}} $</h5>
+
+                    <strong>Listed:</strong> {{auction.publication_date}}
+                    <br/>
+                    <strong>Close Date:</strong> {{auction.close_date}}
+
+                    <p>Unlockable Content to Original Purchase</p>
+                    <p>Ongoing Royalty</p>
+                    <!-- <a class="btn btn-new-purple" style="color:white;" href="https://opensea.io/assets/matic/0x2953399124f0cbb46d2cbacd8a89cf0599974963/23877355183870660164203780572237606328621565712108563135605064079976010088449" target="_blank">Go to NFT</a> -->
+                </div>
+            </div>
+        </div>
+</div>
+

@@ -1,0 +1,118 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+
+    
+
+    <!--MEET THE PARTNERS -->
+
+    <div class="container">
+        <div class="sub-title">The Partners:</div>
+    </div>
+
+    <!-- Containers in cards --> 
+    <!--<div class="container">
+        <div class="row row-cols-auto">
+            <div class="column">
+                <div class="card auction-item mb-4 shadow">
+                    <div class="card mb-3 pb-5">
+                        <img src="{{files_path}}/img/orphanage.svg" alt="Partner" style="width: 30%;">
+                    </div>
+                    <div class="container">
+                        <h2>Siyakhatala</h2>
+                        <p class="title">Founder: Nontsasa Nyovane</p>
+                        <p>Responsible for:</p>
+                        <p>170 chilldren acoss the townships of Cape Town</p>
+                        <p>example@example.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> --> 
+    <div class="container">
+        <div class="row row-cols-4">
+            <div class="column">
+                <div class="card auction-item mb-4 shadow" style="min-height:500px;width:90%;margin:auto;">
+                    <div class="card-image-wrapper">
+                        <img src="{{files_path}}/img/orphanage.svg" alt="Partner" style="height: 160px;">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Siyakhatala Orphanage</h5>
+                        <div>
+                            <p class="title">Founder: Nontsasa Nyovane</p>
+                            <p>Responsible for:</p>
+                            <p>200 children acoss the townships of Cape Town</p>
+                            <p>Inkedama donates the proceeds of the sales to Siyakhathala</p>
+                            <p>Non Profit Organisation: 068-260</p>
+                            <div class="outer">
+                                <div class="inner-button-container">
+                                    <a class="btn btn-new-purple" style="color:white;" href="https://www.facebook.com/siyakhathalawecare" target="_blank">Visit their site</a> <!-- Need to add url for partners page -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card auction-item mb-4 shadow" style="min-height:500px;width:90%;margin:auto;">
+                    <div class="card-image-wrapper">
+                        <img src="{{files_path}}/img/lego.png" alt="Partner" style="height: 160px;">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Is this you?</h5>
+                        <div>
+                            <p class="title">We would love to hear from designers</p> 
+                            <p></p>Be it a career or an interest, get in touch if</p>
+                            <p>you want to use your skills to do good</p>
+                            <div class="outer">
+                                <div class="inner-button-container">
+                                    <a class="btn btn-new-purple" style="color:white;" href=mailto:darren@nudgeexchange.com? target="_blank">Send Email</a> <!-- Send Email -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card auction-item mb-4 shadow" style="min-height:500px;width:90%;margin:auto;">
+                    <div class="card-image-wrapper">
+                        <img src="{{files_path}}/img/B-Corp-Logo-White.jpg" alt="Partner" style="height: 160px;">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">B Corp UK</h5>
+                        <div>
+                            <p class="title">Inkedama parent company is Nudge Exchange Limited</p>
+                            <p>They are a B Corp UK accredited business that adheres to the highest of ESG standards</p>
+                            <p>We use Tech as a Force for Good</p>
+                            <div class="outer">
+                                <div class="inner-button-container">
+                                    <a class="btn btn-new-purple" style="color:white;" href="https://bcorporation.uk/b-corp-certification/?gclid=EAIaIQobChMIhOHWkZeY9QIVlOvtCh1KXgZIEAAYAiAAEgL5kvD_BwE" target="_blank">Visit B Corp UK</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card auction-item mb-4 shadow" style="min-height:500px;width:90%;margin:auto;">
+                    <div class="card-image-wrapper">
+                        <img src="{{files_path}}/img/ecologi.png" alt="Partner" style="height: 160px;">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Ecologi</h5>
+                        <div>
+                            <p class="title">Ecologi is a B Corp UK accredited company.</p>
+                            <p>Ecologi plants trees to offset our carbon footprint.</p>
+                            <p>Follow the link to find out more.</p>
+                            <div class="outer">
+                                <div class="inner-button-container">
+                                    <a class="btn btn-new-purple" href="https://ecologi.com/nudge" style="color:white;" target="_blank">Find More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

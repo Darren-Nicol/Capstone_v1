@@ -1,0 +1,21 @@
+{% if request.path == '/user_panel' %}
+    <p style="text-align:center;"><i>{{sub_title}}</i></p>
+{% elif auctions|length > 0 %}
+    <p class="sub-title" style="text-align:center;"><i>NFTs Posted in {{sub_title}}</i></p>
+{% else %}
+    
+{% endif %}
+
+<div class="container">
+        <div class="row row-cols-3">
+            {% for auction in auctions %}
+                {% include "auctions/partials/listing_layout.html" %}
+            {% empty %} <p></p>
+                {% if request.path == '/user_panel' %}
+                    <p style="text-align:center;"><i>Nothing here.</i></p>
+                {% else %}
+                    <p style="text-align:center;"><i>Nothing here.</i></p>
+                {% endif %} <p></p>
+            {% endfor %}
+        </div>
+</div>
